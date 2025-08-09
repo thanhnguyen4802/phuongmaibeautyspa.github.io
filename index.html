@@ -3,88 +3,170 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title><!-- Phương Mai Beauty & Spa — Nơi vẻ đẹp toả sáng -->Tên Thương Hiệu — Tagline</title>
-  <meta name="description" content="<!-- REPLACE: Mô tả ngắn 140 ký tự -->Chuyên cung cấp ..."> 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <meta name="theme-color" content="#0b74de">
+  <title>Phương Mai Beauty & Spa — Chăm sóc sắc đẹp chuyên nghiệp</title>
+  <meta name="description" content="Phương Mai Beauty & Spa - Dịch vụ chăm sóc sắc đẹp chuyên nghiệp: chăm sóc da, trị mụn, triệt lông, massage thư giãn. Liên hệ để được tư vấn." />
+  <meta name="theme-color" content="#b97d6a" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#ffffff; --muted:#666; --accent:#0b74de; --container:1100px;
-      --radius:12px; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      --accent:#b97d6a; /* warm luxury */
+      --muted:#6b6b6b;
+      --radius:14px;
+      --container:1100px;
+      --bg:#fff9f6;
+      font-family:Inter,system-ui,-apple-system,Segoe UI, Roboto, Arial, sans-serif;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#111;line-height:1.5}
+    body{margin:0;background:var(--bg);color:#111}
+    a{color:inherit}
     .container{max-width:var(--container);margin:0 auto;padding:0 18px}
-    header{padding:16px 0;display:flex;align-items:center;justify-content:space-between}
+
+    /* Header */
+    header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
     .brand{display:flex;gap:12px;align-items:center}
-    .brand img{height:42px}
-    nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
-    .hero{display:grid;grid-template-columns:1fr;gap:18px;padding:56px 0;background:linear-gradient(90deg, rgba(11,116,222,0.06), rgba(11,116,222,0.02));text-align:center}
-    .hero h1{font-size:32px;margin:0 0 8px}
-    .hero p.lead{margin:0 auto 18px;max-width:760px;color:var(--muted)}
-    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:36px 0}
-    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(15,15,15,0.05)}
-    h2{margin-top:0}
-    #about{padding:20px 0}
-    #contact{padding:10px 0}
-    footer{padding:18px 0;color:var(--muted);text-align:center;font-size:14px}
+    .brand img{height:52px}
+    nav{display:flex;gap:16px}
+    nav a{font-weight:600;color:var(--muted);text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:24px;padding:48px 0;align-items:center}
+    .hero-inner{padding:22px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.95));box-shadow:0 12px 30px rgba(15,15,15,0.06)}
+    h1{font-family:'Playfair Display',serif;font-size:38px;margin:0 0 8px}
+    p.lead{margin:0 0 18px;color:var(--muted);max-width:720px}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .hero-visual img{width:100%;height:auto;border-radius:12px;display:block}
+
+    /* Services */
+    .services{padding:36px 0}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .service-card{background:white;padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(15,15,15,0.05)}
+    .service-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .service-card h3{margin:12px 0 6px;font-size:18px}
+    .service-card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* About & Benefits */
+    .about{display:flex;flex-direction:column;gap:18px;padding:22px 0}
+    .benefits{display:flex;flex-wrap:wrap;gap:12px}
+    .benefit{background:white;padding:14px;border-radius:10px;min-width:200px;box-shadow:0 8px 18px rgba(15,15,15,0.04)}
+
+    /* Contact */
+    .contact{padding:22px 0}
+    .contact .card{display:grid;grid-template-columns:1fr;gap:12px;padding:18px}
+
+    footer{padding:22px 0;color:var(--muted);text-align:center;font-size:14px}
+
     /* Responsive */
-    @media(min-width:800px){
-      .hero{grid-template-columns:1fr 480px; text-align:left;align-items:center}
-      .hero .visual{border-radius:14px;overflow:hidden}
-      .hero h1{font-size:40px}
+    @media(min-width:900px){
+      .hero{grid-template-columns:1fr 460px}
+      h1{font-size:48px}
+      .brand img{height:64px}
+      .contact .card{grid-template-columns:1fr 360px}
     }
+
   </style>
 </head>
 <body>
   <header class="container">
     <div class="brand">
-      <img src="assets/logo.png" alt="Logo thương hiệu (thay bằng assets/logo.png)">
+      <img src="assets/logo.png" alt="Logo Phương Mai Beauty & Spa">
       <div>
-        <div style="font-weight:700">Tên Thương Hiệu</div>
-        <div style="font-size:13px;color:var(--muted)">Tagline ngắn</div>
+        <div style="font-weight:700">Phương Mai Beauty & Spa</div>
+        <div style="font-size:13px;color:var(--muted)">Sắc đẹp - Tự tin - Chuyên nghiệp</div>
       </div>
     </div>
     <nav>
       <a href="#about">Giới thiệu</a>
+      <a href="#services">Dịch vụ</a>
       <a href="#contact">Liên hệ</a>
     </nav>
   </header>
 
-  <section class="hero container" aria-label="Hero">
-    <div>
-      <h1><!-- Phương Mai Beauty & Spa -->Chúng tôi là [Tên Thương Hiệu], bảo tồn và phát triển</h1>
-      <p class="lead"><!-- Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững -->Sứ mệnh của chúng tôi là... (30–40 chữ)</p>
-      <a class="cta" href="#contact">Liên hệ ngay</a>
-      <div class="features" style="margin-top:28px">
-        <div class="card"><strong>Chất lượng cao</strong><p style="color:var(--muted);margin:8px 0 0">Mô tả 1–2 câu.</p></div>
-        <div class="card"><strong>Bản địa & bền vững</strong><p style="color:var(--muted);margin:8px 0 0">Mô tả ngắn.</p></div>
-        <div class="card"><strong>Quy trình minh bạch</strong><p style="color:var(--muted);margin:8px 0 0">Mô tả ngắn.</p></div>
+  <section class="hero container">
+    <div class="hero-inner">
+      <h1>Chăm sóc sắc đẹp toàn diện — Phương Mai Beauty & Spa</h1>
+      <p class="lead">Chúng tôi kết hợp công nghệ hiện đại và liệu pháp truyền thống để mang đến trải nghiệm chăm sóc da, thư giãn và phục hồi sắc đẹp an toàn, hiệu quả.</p>
+      <a class="cta" href="#contact">Đặt lịch ngay</a>
+
+      <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px">
+        <div style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 18px rgba(15,15,15,0.04)">
+          <strong>Giờ làm việc</strong>
+          <div style="color:var(--muted);font-size:14px">T2–T7: 09:00 – 20:00</div>
+        </div>
+        <div style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 18px rgba(15,15,15,0.04)">
+          <strong>Đặt lịch</strong>
+          <div style="color:var(--muted);font-size:14px">Hotline: <a href="tel:+84xxxxxxxxx">+84 xxxxxxxxx</a></div>
+        </div>
       </div>
     </div>
 
-    <div class="visual">
-      <img src="assets/hero.jpg" alt="Ảnh hero" style="width:100%;height:auto;display:block;border-radius:12px" loading="lazy">
+    <div class="hero-visual">
+      <img src="assets/hero.jpg" alt="Phương Mai Beauty & Spa - hero image">
     </div>
   </section>
 
   <main class="container">
-    <section id="about">
-      <h2>Về chúng tôi</h2>
-      <p><!-- Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững -->Đoạn kể câu chuyện thương hiệu, sứ mệnh, nguồn gốc... </p>
+    <section id="about" class="about">
+      <h2>Về Phương Mai</h2>
+      <p style="color:var(--muted);max-width:900px">Phương Mai Beauty & Spa ra đời với sứ mệnh chăm sóc vẻ đẹp tự nhiên của từng khách hàng. Đội ngũ chuyên viên giàu kinh nghiệm kết hợp công nghệ hiện đại và quy trình an toàn để đem lại kết quả lâu dài, giúp bạn tự tin hơn trong cuộc sống hàng ngày.</p>
+
+      <div class="benefits">
+        <div class="benefit"><strong>Chuyên viên chuyên nghiệp</strong><div style="color:var(--muted);font-size:14px">Đội ngũ được đào tạo bài bản, tận tâm.</div></div>
+        <div class="benefit"><strong>Trang thiết bị hiện đại</strong><div style="color:var(--muted);font-size:14px">Máy móc, công nghệ đạt chuẩn.</div></div>
+        <div class="benefit"><strong>Quy trình an toàn</strong><div style="color:var(--muted);font-size:14px">Vật liệu & liệu trình được kiểm định.</div></div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Liên hệ</h2>
-      <p>Email: <a href="mailto:you@domain.com">you@domain.com</a> • SĐT: <a href="tel:+84123xxxxxxx">+84 123 xxx xxx</a></p>
-      <p>Địa chỉ: <!-- Phan Rang --> Xã/Thị trấn, Tỉnh</p>
+    <section id="services" class="services">
+      <h2>Dịch vụ tiêu biểu</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="assets/service1.jpg" alt="Chăm sóc da chuyên sâu">
+          <h3>Chăm sóc da chuyên sâu</h3>
+          <p>Liệu trình dưỡng ẩm, phục hồi và tái tạo da bằng sản phẩm chuyên biệt.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="assets/service2.jpg" alt="Trị mụn chuyên sâu">
+          <h3>Trị mụn chuyên sâu</h3>
+          <p>Phân tích da và liệu trình đặc trị an toàn, hiệu quả.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="assets/service3.jpg" alt="Triệt lông công nghệ cao">
+          <h3>Triệt lông công nghệ cao</h3>
+          <p>Giải pháp triệt lông lâu dài, phù hợp nhiều vùng da.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="assets/service4.jpg" alt="Massage thư giãn">
+          <h3>Massage & thư giãn</h3>
+          <p>Thư giãn chuyên sâu, phục hồi cơ thể và giảm stress.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Liên hệ & Đặt lịch</h2>
+      <div class="card" style="background:white;border-radius:12px;box-shadow:0 12px 30px rgba(15,15,15,0.05)">
+        <div style="padding:12px">
+          <p style="margin:0 0 8px"><strong>Địa chỉ:</strong> Số X, Đường Y, Quận Z, Thành phố</p>
+          <p style="margin:0 0 8px"><strong>Điện thoại:</strong> <a href="tel:+84xxxxxxxxx">+84 xxxxxxxxx</a></p>
+          <p style="margin:0 0 8px"><strong>Email:</strong> <a href="mailto:contact@phuongmai.com">contact@phuongmai.com</a></p>
+        </div>
+
+        <div style="padding:12px">
+          <!-- Google Maps embed placeholder - replace with your actual embed link -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!2m12!1m3!1d0!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzAwLjAiTiAwwrAwMCcwMC4wIl0!5e0!3m2!1svi!2s!4v0000000000000" width="100%" height="220" style="border:0;border-radius:8px" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <p style="margin-top:12px;color:var(--muted)">Hoặc nhắn tin qua Facebook/Instagram để được tư vấn nhanh.</p>
     </section>
   </main>
 
-  <footer>
-    © <span id="yr"></span> Phương Mai Beauty & Spa — All rights reserved.
+  <footer class="container">
+    <div style="padding:14px 0">© <span id="yr"></span> Phương Mai Beauty & Spa • Designed with care</div>
     <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
   </footer>
 </body>
