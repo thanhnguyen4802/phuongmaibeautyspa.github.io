@@ -1,218 +1,135 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phương Mai Beauty & Spa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --color-primary: #a9bfa4;
-      --color-dark: #244f35;
-      --color-darker: #1f402c;
-    }
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fff;}
-    header {background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top:0; z-index: 100;}
-    .nav-wrap {max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;}
-    .brand {display: flex; align-items: center;}
-    .logo {background: var(--color-primary); color: #fff; padding: 10px; border-radius: 50%; font-weight: bold;}
-    .title {font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-left: 10px; color: var(--color-dark);}
-    nav ul {list-style: none; display: flex; align-items: center;}
-    nav ul li {margin-left: 20px;}
-    nav ul li a {text-decoration: none; color: var(--color-dark); font-weight: bold; transition: color 0.3s;}
-    nav ul li a:hover {color: var(--color-primary);}
-    /* Hero */
-    .hero {height: 80vh; background: url('assets/hero.jpg') center/cover no-repeat; display: flex; align-items: flex-end; justify-content: center; position: relative;}
-    .slogan {
-      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-      background: rgba(255,255,255,0.85); padding: 20px 40px; border-radius: 8px;
-      font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--color-darker);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center;
-    }
-    /* Sections full width */
-    section {padding: 60px 20px;}
-    .section-inner {max-width: 1200px; margin: auto;}
-    section h2 {font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--color-dark); margin-bottom: 20px; text-align: center;}
-    /* Grid cards */
-    .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
-    .card {background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; opacity: 0; transform: translateY(20px); transition: all 0.6s ease;}
-    .card img {width: 100%; height: 200px; object-fit: cover;}
-    .card-content {padding: 15px;}
-    .card-content h3 {font-size: 1.2rem; margin-bottom: 10px; color: var(--color-darker);}
-    .card-content p {font-size: 0.95rem; color: #555;}
-    /* Map */
-    .map-wrap {height: 300px; border-radius: 8px; overflow: hidden;}
-    /* Footer */
-    footer {background: var(--color-darker); color: #fff; padding: 30px 20px;}
-    .fgrid {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;}
-    .fgrid a {color: var(--color-primary); text-decoration: none; display: flex; align-items: center;}
-    .fgrid svg {margin-right: 8px;}
-    /* Fade-in animation trigger */
-    .fade-in.show {opacity: 1; transform: translateY(0);}
-    @media(max-width: 768px) {
-      nav ul {flex-wrap: wrap;}
-      .hero {height: 60vh;}
-      .slogan {font-size: 1.4rem; padding: 15px 25px;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương Mai Beauty & Spa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Header -->
 <header>
-  <div class="nav-wrap">
-    <div class="brand">
-      <div class="logo">PM</div>
-      <div class="title">Phương Mai Beauty & Spa</div>
-    </div>
     <nav>
-      <ul>
-        <li><a href="#about">Giới thiệu</a></li>
-        <li><a href="#services">Dịch vụ</a></li>
-        <li><a href="#favorite">Yêu thích</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-        <li>
-          <a href="https://www.facebook.com/MyVienPhuongMai" target="_blank" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 320 512" fill="#244f35" xmlns="http://www.w3.org/2000/svg">
-              <path d="M279.14 288l14.22-92.66h-88.91V134.9c0-25.35 12.42-50.06 
-              52.24-50.06H293V6.26S259.5 0 225.36 0C141.09 
-              0 89.09 54.42 89.09 153.12V195.3H0v92.66h89.09V512h107.88V288z"/>
-            </svg>
-          </a>
-        </li>
-      </ul>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo" style="height:50px;">
+        </div>
+        <div class="menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="menu.html">Menu dịch vụ</a>
+            <a href="#about">Sứ mệnh</a>
+            <a href="#services">Dịch vụ tiêu biểu</a>
+            <a href="#contact">Liên hệ</a>
+        </div>
     </nav>
-  </div>
 </header>
 
+<!-- Hero -->
 <section class="hero">
-  <div class="slogan">Nơi vẻ đẹp toả sáng</div>
+    <div class="slogan-container">
+        <h1>Nơi vẻ đẹp toả sáng</h1>
+    </div>
 </section>
 
-<section id="about" style="background-color: var(--color-primary); color: #fff;">
-  <div class="section-inner">
+<!-- Sứ mệnh -->
+<section id="about">
     <h2>Sứ mệnh</h2>
-    <p>Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.</p>
-  </div>
+    <p style="max-width:800px;margin:auto;text-align:center;">
+        Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện,
+        nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng,
+        tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm,
+        kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn
+        trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.
+    </p>
 </section>
 
-<section id="services" style="background: #f7f7f7;">
-  <div class="section-inner">
+<!-- Dịch vụ tiêu biểu -->
+<section id="services">
     <h2>Dịch vụ tiêu biểu</h2>
-    <div class="grid">
-      <div class="card fade-in">
-        <img src="assets/service1.jpg" alt="Chăm sóc da mặt chuyên sâu">
-        <div class="card-content">
-          <h3>Chăm sóc da mặt chuyên sâu</h3>
-          <p>Từ 300.000đ</p>
+    <div class="services-grid">
+        <div class="service-card">
+            <img src="assets/service1.jpg" alt="Chăm sóc da mặt">
+            <div class="content">
+                <h3>Chăm sóc da mặt chuyên sâu</h3>
+                <p>Liệu trình dưỡng da giúp da mịn màng, căng bóng và tươi trẻ.</p>
+            </div>
         </div>
-      </div>
-      <div class="card fade-in">
-        <img src="assets/service2.jpg" alt="Peel da sinh học">
-        <div class="card-content">
-          <h3>Peel da sinh học</h3>
-          <p>Từ 500.000đ</p>
+        <div class="service-card">
+            <img src="assets/service2.jpg" alt="Peel da">
+            <div class="content">
+                <h3>Peel da sinh học</h3>
+                <p>Tái tạo làn da, cải thiện thâm nám, mụn và sẹo.</p>
+            </div>
         </div>
-      </div>
-      <div class="card fade-in">
-        <img src="assets/service3.jpg" alt="Mesotherapy">
-        <div class="card-content">
-          <h3>Mesotherapy</h3>
-          <p>Từ 1.200.000đ</p>
+        <div class="service-card">
+            <img src="assets/service3.jpg" alt="Mesotherapy">
+            <div class="content">
+                <h3>Mesotherapy</h3>
+                <p>Cung cấp dưỡng chất trực tiếp vào da, phục hồi và trẻ hóa.</p>
+            </div>
         </div>
-      </div>
-      <div class="card fade-in">
-        <img src="assets/service4.jpg" alt="Body massage">
-        <div class="card-content">
-          <h3>Body massage & chăm sóc toàn thân</h3>
-          <p>Từ 400.000đ</p>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
-<section id="favorite">
-  <div class="section-inner">
-    <h2>Dịch vụ được yêu thích</h2>
-    <div class="grid">
-      <div class="card fade-in">
-        <img src="assets/favorite1.jpg" alt="Điều trị mụn chuyên sâu">
-        <div class="card-content">
-          <h3>Điều trị mụn chuyên sâu</h3>
-          <p>Từ 350.000đ</p>
+<!-- Dịch vụ yêu thích -->
+<section>
+    <h2>Dịch vụ yêu thích</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <img src="assets/favorite1.jpg" alt="Điều trị mụn">
+            <div class="content">
+                <h3>Điều trị mụn</h3>
+                <p>Liệu trình chuyên sâu giúp loại bỏ mụn và ngăn ngừa tái phát.</p>
+            </div>
         </div>
-      </div>
-      <div class="card fade-in">
-        <img src="assets/favorite2.jpg" alt="Nâng cơ trẻ hoá da">
-        <div class="card-content">
-          <h3>Nâng cơ trẻ hoá da</h3>
-          <p>Từ 2.000.000đ</p>
+        <div class="service-card">
+            <img src="assets/favorite2.jpg" alt="Nâng cơ trẻ hoá">
+            <div class="content">
+                <h3>Nâng cơ trẻ hoá</h3>
+                <p>Giúp da săn chắc, giảm nếp nhăn và trẻ hóa toàn diện.</p>
+            </div>
         </div>
-      </div>
-      <div class="card fade-in">
-        <img src="assets/favorite3.jpg" alt="Tắm trắng body">
-        <div class="card-content">
-          <h3>Tắm trắng body</h3>
-          <p>Từ 600.000đ</p>
+        <div class="service-card">
+            <img src="assets/favorite3.jpg" alt="Tắm trắng body">
+            <div class="content">
+                <h3>Tắm trắng body</h3>
+                <p>Làm sáng mịn làn da toàn thân với công nghệ hiện đại.</p>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
-<section id="contact" style="background: #f7f7f7;">
-  <div class="section-inner">
+<!-- Liên hệ & Google Form -->
+<section id="contact">
     <h2>Liên hệ</h2>
-    <p>Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
-    <p>Điện thoại: 0946 688 679 - 0767 116 767</p>
-    <p>Giờ mở cửa: 08:00 - 20:00 (T2 - CN)</p>
-    <div class="map-wrap">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!...(link đầy đủ)" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <p style="text-align:center;">Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
+    <p style="text-align:center;">Điện thoại: 0946 688 679 - 0767 116 767</p>
+    <p style="text-align:center;">Facebook: <a href="https://www.facebook.com/MyVienPhuongMai" target="_blank">MyVienPhuongMai</a></p>
+
+    <!-- Google Form -->
+    <div class="contact-form" style="max-width:900px;margin:auto;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTRcA90gQqVSnZk-P76lCtCtHoYAvinQzPbQVUTM3MjCVWCA/viewform?embedded=true" 
+                width="100%" 
+                height="700" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">
+            Đang tải…
+        </iframe>
     </div>
-  </div>
+
+    <!-- Google Map -->
+    <div class="map-container" style="margin-top:40px;max-width:900px;margin:auto;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6279.490919675656!2d108.9793674!3d11.574833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170d16a104785e7%3A0xaeb18afc9b29b785!2zVGjhuqFtIG3hu7kgUGjGsMahbmcgTWFpIE5pbmggVGh14bqtbg!5e0!3m2!1svi!2s!4v1691579316873!5m2!1svi!2s"
+                width="100%" height="400" style="border:0;" allowfullscreen loading="lazy">
+        </iframe>
+    </div>
 </section>
 
+<!-- Footer -->
 <footer>
-  <div class="fgrid">
-    <div>
-      <strong>Phương Mai Beauty & Spa</strong>
-      <p>Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
-      <p>Hotline: 0946 688 679 • 0767 116 767</p>
-    </div>
-    <div>
-      <strong>Giờ mở cửa</strong>
-      <p>Thứ 2 - Chủ nhật: 08:00 - 20:00</p>
-    </div>
-    <div>
-      <strong>Kết nối</strong>
-      <p>
-        <a href="https://www.facebook.com/MyVienPhuongMai" target="_blank" aria-label="Facebook">
-          <svg width="20" height="20" viewBox="0 0 320 512" fill="#a9bfa4" xmlns="http://www.w3.org/2000/svg">
-            <path d="M279.14 288l14.22-92.66h-88.91V134.9c0-25.35 12.42-50.06 
-            52.24-50.06H293V6.26S259.5 0 225.36 0C141.09 
-            0 89.09 54.42 89.09 153.12V195.3H0v92.66h89.09V512h107.88V288z"/>
-          </svg>
-          Facebook
-        </a>
-      </p>
-    </div>
-  </div>
+    <p>&copy; 2025 Phương Mai Beauty & Spa | Thiết kế bởi bạn</p>
 </footer>
-
-<script>
-  // Fade-in khi scroll
-  const cards = document.querySelectorAll('.fade-in');
-  const showOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    cards.forEach(card => {
-      const cardTop = card.getBoundingClientRect().top;
-      if(cardTop < triggerBottom) card.classList.add('show');
-    });
-  };
-  window.addEventListener('scroll', showOnScroll);
-  showOnScroll();
-</script>
 
 </body>
 </html>
