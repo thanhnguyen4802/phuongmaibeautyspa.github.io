@@ -12,7 +12,7 @@
       --color-darker: #1f402c;
     }
     * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Lato', sans-serif; line-height: 1.6; color: #333;}
+    body {font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fff;}
     header {background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top:0; z-index: 100;}
     .nav-wrap {max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;}
     .brand {display: flex; align-items: center;}
@@ -23,13 +23,20 @@
     nav ul li a {text-decoration: none; color: var(--color-dark); font-weight: bold; transition: color 0.3s;}
     nav ul li a:hover {color: var(--color-primary);}
     /* Hero */
-    .hero {height: 80vh; background: url('assets/hero.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center;}
-    .slogan {background: rgba(255,255,255,0.85); padding: 20px 40px; border-radius: 8px; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--color-darker);}
-    /* Sections */
-    section {padding: 60px 20px; max-width: 1200px; margin: auto;}
+    .hero {height: 80vh; background: url('assets/hero.jpg') center/cover no-repeat; display: flex; align-items: flex-end; justify-content: center; position: relative;}
+    .slogan {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,0.85); padding: 20px 40px; border-radius: 8px;
+      font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--color-darker);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center;
+    }
+    /* Sections full width */
+    section {padding: 60px 20px;}
+    .section-inner {max-width: 1200px; margin: auto;}
     section h2 {font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--color-dark); margin-bottom: 20px; text-align: center;}
+    /* Grid cards */
     .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
-    .card {background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;}
+    .card {background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; opacity: 0; transform: translateY(20px); transition: all 0.6s ease;}
     .card img {width: 100%; height: 200px; object-fit: cover;}
     .card-content {padding: 15px;}
     .card-content h3 {font-size: 1.2rem; margin-bottom: 10px; color: var(--color-darker);}
@@ -41,11 +48,12 @@
     .fgrid {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;}
     .fgrid a {color: var(--color-primary); text-decoration: none; display: flex; align-items: center;}
     .fgrid svg {margin-right: 8px;}
-    /* Responsive */
+    /* Fade-in animation trigger */
+    .fade-in.show {opacity: 1; transform: translateY(0);}
     @media(max-width: 768px) {
       nav ul {flex-wrap: wrap;}
       .hero {height: 60vh;}
-      .slogan {font-size: 1.4rem;}
+      .slogan {font-size: 1.4rem; padding: 15px 25px;}
     }
   </style>
 </head>
@@ -77,94 +85,92 @@
   </div>
 </header>
 
-<section class="hero"></section>
-<div class="slogan">Nơi vẻ đẹp toả sáng</div>
-
-<section id="about">
-  <h2>Sứ mệnh</h2>
-  <p>Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.</p>
+<section class="hero">
+  <div class="slogan">Nơi vẻ đẹp toả sáng</div>
 </section>
 
-<section id="services">
-  <h2>Dịch vụ tiêu biểu</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/service1.jpg" alt="Chăm sóc da mặt chuyên sâu">
-      <div class="card-content">
-        <h3>Chăm sóc da mặt chuyên sâu</h3>
-        <p>Từ 300.000đ</p>
+<section id="about" style="background-color: var(--color-primary); color: #fff;">
+  <div class="section-inner">
+    <h2>Sứ mệnh</h2>
+    <p>Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.</p>
+  </div>
+</section>
+
+<section id="services" style="background: #f7f7f7;">
+  <div class="section-inner">
+    <h2>Dịch vụ tiêu biểu</h2>
+    <div class="grid">
+      <div class="card fade-in">
+        <img src="assets/service1.jpg" alt="Chăm sóc da mặt chuyên sâu">
+        <div class="card-content">
+          <h3>Chăm sóc da mặt chuyên sâu</h3>
+          <p>Từ 300.000đ</p>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="assets/service2.jpg" alt="Peel da sinh học">
-      <div class="card-content">
-        <h3>Peel da sinh học</h3>
-        <p>Từ 500.000đ</p>
+      <div class="card fade-in">
+        <img src="assets/service2.jpg" alt="Peel da sinh học">
+        <div class="card-content">
+          <h3>Peel da sinh học</h3>
+          <p>Từ 500.000đ</p>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="assets/service3.jpg" alt="Mesotherapy">
-      <div class="card-content">
-        <h3>Mesotherapy</h3>
-        <p>Từ 1.200.000đ</p>
+      <div class="card fade-in">
+        <img src="assets/service3.jpg" alt="Mesotherapy">
+        <div class="card-content">
+          <h3>Mesotherapy</h3>
+          <p>Từ 1.200.000đ</p>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="assets/service4.jpg" alt="Body massage">
-      <div class="card-content">
-        <h3>Body massage & chăm sóc toàn thân</h3>
-        <p>Từ 400.000đ</p>
+      <div class="card fade-in">
+        <img src="assets/service4.jpg" alt="Body massage">
+        <div class="card-content">
+          <h3>Body massage & chăm sóc toàn thân</h3>
+          <p>Từ 400.000đ</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="favorite">
-  <h2>Dịch vụ được yêu thích</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/favorite1.jpg" alt="Điều trị mụn chuyên sâu">
-      <div class="card-content">
-        <h3>Điều trị mụn chuyên sâu</h3>
-        <p>Từ 350.000đ</p>
+  <div class="section-inner">
+    <h2>Dịch vụ được yêu thích</h2>
+    <div class="grid">
+      <div class="card fade-in">
+        <img src="assets/favorite1.jpg" alt="Điều trị mụn chuyên sâu">
+        <div class="card-content">
+          <h3>Điều trị mụn chuyên sâu</h3>
+          <p>Từ 350.000đ</p>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="assets/favorite2.jpg" alt="Nâng cơ trẻ hoá da">
-      <div class="card-content">
-        <h3>Nâng cơ trẻ hoá da</h3>
-        <p>Từ 2.000.000đ</p>
+      <div class="card fade-in">
+        <img src="assets/favorite2.jpg" alt="Nâng cơ trẻ hoá da">
+        <div class="card-content">
+          <h3>Nâng cơ trẻ hoá da</h3>
+          <p>Từ 2.000.000đ</p>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="assets/favorite3.jpg" alt="Tắm trắng body">
-      <div class="card-content">
-        <h3>Tắm trắng body</h3>
-        <p>Từ 600.000đ</p>
+      <div class="card fade-in">
+        <img src="assets/favorite3.jpg" alt="Tắm trắng body">
+        <div class="card-content">
+          <h3>Tắm trắng body</h3>
+          <p>Từ 600.000đ</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Liên hệ</h2>
-  <p>Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
-  <p>Điện thoại: 0946 688 679 - 0767 116 767</p>
-  <p>Giờ mở cửa: 08:00 - 20:00 (T2 - CN)</p>
-  <div class="map-wrap">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7820.759310427779!2d108.9793674!3d11.574833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170d16a104785e7%3Aaeb18afc9b29b785!2zVGjhuqVtIG3hu7kgUGjGsMahbmcgTWFpIE5pbmggVGh14bqtbg!5e0!3m2!1svi!2s!4v1722931023456!5m2!1svi!2s" 
-      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
+<section id="contact" style="background: #f7f7f7;">
+  <div class="section-inner">
+    <h2>Liên hệ</h2>
+    <p>Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
+    <p>Điện thoại: 0946 688 679 - 0767 116 767</p>
+    <p>Giờ mở cửa: 08:00 - 20:00 (T2 - CN)</p>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!...(link đầy đủ)" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
   </div>
-  <h3>Đặt lịch hẹn</h3>
-  <form>
-    <input type="text" placeholder="Họ và tên" required>
-    <input type="tel" placeholder="Số điện thoại" required>
-    <input type="date" required>
-    <textarea placeholder="Ghi chú" rows="4"></textarea>
-    <button type="submit">Gửi</button>
-  </form>
 </section>
 
 <footer>
@@ -193,6 +199,20 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Fade-in khi scroll
+  const cards = document.querySelectorAll('.fade-in');
+  const showOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if(cardTop < triggerBottom) card.classList.add('show');
+    });
+  };
+  window.addEventListener('scroll', showOnScroll);
+  showOnScroll();
+</script>
 
 </body>
 </html>
