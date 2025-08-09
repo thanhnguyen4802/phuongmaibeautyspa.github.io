@@ -1,99 +1,270 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phương Mai Beauty & Spa</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato&display=swap" rel="stylesheet">
-<style>
-  body {margin:0; font-family:'Lato', sans-serif; background:#fff; color:#1f402c;}
-  header {background:#244f35; position:fixed; top:0; width:100%; z-index:1000;}
-  nav {display:flex; justify-content:space-between; align-items:center; padding:10px 40px;}
-  nav ul {list-style:none; display:flex; margin:0; padding:0;}
-  nav ul li {position:relative;}
-  nav a {color:#fff; padding:10px 20px; text-decoration:none; font-weight:bold;}
-  nav a:hover {background:#1f402c; border-radius:4px;}
-  nav ul li ul {display:none; position:absolute; background:#244f35; min-width:200px; top:100%; left:0;}
-  nav ul li:hover ul {display:block;}
-  nav ul li ul li a {display:block; padding:10px;}
-  .hero {height:100vh; background:url('assets/hero.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; position:relative;}
-  .hero::after {content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(36,79,53,0.5);}
-  .hero-content {position:relative; z-index:1; animation:fadeIn 2s ease;}
-  .hero h1 {font-family:'Playfair Display', serif; font-size:3em; margin-bottom:0.5em;}
-  .hero p {font-size:1.3em; background:rgba(169,191,164,0.8); display:inline-block; padding:10px 20px; border-radius:5px;}
-  @keyframes fadeIn {from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}
-  section {padding:60px 20px; max-width:1200px; margin:auto;}
-  .services, .promotions, .team {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
-  .card {background:#a9bfa4; padding:20px; border-radius:10px; text-align:center; color:#1f402c; transition:transform 0.3s;}
-  .card:hover {transform:translateY(-5px);}
-  footer {background:#1f402c; color:#fff; padding:40px 20px; display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px;}
-  footer a {color:#a9bfa4; text-decoration:none;}
-  footer a:hover {text-decoration:underline;}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Phương Mai Beauty & Spa — Nơi vẻ đẹp toả sáng</title>
+  <meta name="description" content="Phương Mai Beauty & Spa - Chăm sóc da, liệu pháp chuyên sâu, mesotherapy, body & massage. Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent-1: #a9bfa4; /* pastel */
+      --accent-2: #244f35; /* primary deep */
+      --accent-3: #1f402c; /* dark */
+      --bg: #ffffff;
+      --muted: #556b5a;
+      --container: 1200px;
+      --radius: 12px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Lato',system-ui,Arial;background:var(--bg);color:var(--accent-3);-webkit-font-smoothing:antialiased}
+
+    /* Header */
+    header{position:fixed;top:0;left:0;right:0;background:transparent;padding:14px 24px;z-index:1200}
+    .nav-wrap{max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),#fff);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:var(--accent-3);font-weight:700}
+    .brand .title{color:var(--accent-3);font-family:'Playfair Display',serif;font-size:18px}
+
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px;align-items:center}
+    nav a{color:var(--accent-3);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a:hover{background:rgba(36,79,53,0.08);color:var(--accent-2)}
+
+    /* Hero */
+    .hero{height:72vh;background:url('assets/hero.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;position:relative;margin-top:70px}
+    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,79,53,0.18),rgba(31,64,44,0.18));}
+
+    /* Slogan section separated */
+    .slogan-wrap{max-width:var(--container);margin:-60px auto 40px;display:flex;align-items:center;justify-content:center}
+    .slogan{background:linear-gradient(90deg,var(--accent-1),rgba(169,191,164,0.85));padding:28px 36px;border-radius:14px;box-shadow:0 14px 40px rgba(20,40,30,0.08);text-align:center;max-width:980px}
+    .slogan h1{font-family:'Playfair Display',serif;margin:0;font-size:32px;color:var(--accent-3);letter-spacing:0.6px}
+    .slogan p{margin:8px 0 0;color:var(--muted);font-size:15px}
+
+    /* Section layout */
+    main{max-width:var(--container);margin:30px auto;padding:0 20px}
+    section{padding:28px 0}
+    h2{font-family:'Playfair Display',serif;color:var(--accent-2);font-size:24px;text-align:center;margin-bottom:18px}
+
+    /* Mission */
+    .mission{background:#f3fbf6;border:1px solid rgba(36,79,53,0.06);padding:22px;border-radius:12px;color:var(--accent-3);line-height:1.6}
+
+    /* Services grid */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .service-card{background:#fff;border-radius:12px;padding:18px;border:1px solid rgba(36,79,53,0.06);box-shadow:0 12px 30px rgba(15,20,15,0.04);transition:transform .28s ease,box-shadow .28s ease}
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(15,20,15,0.08)}
+    .service-card h3{margin:0 0 8px;font-size:18px;color:var(--accent-3)}
+    .service-card p{margin:0;color:var(--muted);font-size:14px}
+    .price{margin-top:12px;font-weight:700;color:var(--accent-2)}
+
+    /* Promotions */
+    .promo{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .promo .chip{background:var(--accent-2);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700}
+
+    /* Team */
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+    .member{background:#fff;padding:14px;border-radius:12px;text-align:center}
+    .member img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .member h4{margin:10px 0 4px;font-size:16px}
+    .member p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Contact layout */
+    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    .contact-card{background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(36,79,53,0.06)}
+
+    /* Google map small frame */
+    .map-wrap iframe{width:100%;height:100%;border:0;border-radius:10px}
+    .map-box{height:300px}
+
+    footer{margin-top:30px;background:var(--accent-3);color:var(--accent-1);padding:28px}
+    footer .fgrid{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+    footer a{color:var(--accent-1)}
+
+    /* Responsive tweaks */
+    @media(max-width:900px){
+      .nav-wrap{padding:0 16px}
+      nav ul{display:none}
+      header{padding:10px}
+      .slogan-wrap{margin-top:10px;margin-left:12px;margin-right:12px}
+      .contact-grid{grid-template-columns:1fr}
+      .map-box{height:260px}
+    }
+  </style>
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo"><a href="#" style="color:#a9bfa4; font-size:1.5em; font-family:'Playfair Display', serif;">Phương Mai Spa</a></div>
-    <ul>
-      <li><a href="#">Trang chủ</a></li>
-      <li><a href="#">Giới thiệu</a>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <div class="logo">PM</div>
+        <div class="title">Phương Mai Beauty & Spa</div>
+      </div>
+      <nav>
         <ul>
-          <li><a href="#mission">Sứ mệnh</a></li>
-          <li><a href="#team">Đội ngũ</a></li>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#services">Dịch vụ</a></li>
+          <li><a href="#promotions">Ưu đãi</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
         </ul>
-      </li>
-      <li><a href="#services">Dịch vụ</a></li>
-      <li><a href="#promotions">Ưu đãi</a></li>
-      <li><a href="#contact">Liên hệ</a></li>
-    </ul>
-  </nav>
-</header>
-<div class="hero">
-  <div class="hero-content">
-    <h1>Nơi vẻ đẹp toả sáng</h1>
-    <p>Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện...</p>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" role="img" aria-label="Hero Phuong Mai Spa"></div>
+
+  <!-- Slogan (separate) -->
+  <div class="slogan-wrap">
+    <div class="slogan">
+      <h1>Nơi vẻ đẹp toả sáng</h1>
+      <p>Vẻ đẹp tự nhiên, sự chăm sóc tận tâm — trải nghiệm spa cao cấp tại Phương Mai.</p>
+    </div>
   </div>
-</div>
-<section id="services">
-  <h2 style="font-family:'Playfair Display', serif; text-align:center;">Dịch vụ nổi bật</h2>
-  <div class="services">
-    <div class="card">Dịch vụ 1</div>
-    <div class="card">Dịch vụ 2</div>
-    <div class="card">Dịch vụ 3</div>
-    <div class="card">Dịch vụ 4</div>
-  </div>
-</section>
-<section id="promotions">
-  <h2 style="font-family:'Playfair Display', serif; text-align:center;">Ưu đãi</h2>
-  <div class="promotions">
-    <div class="card">Giảm giá mùa hè</div>
-    <div class="card">Combo đặc biệt</div>
-  </div>
-</section>
-<section id="team">
-  <h2 style="font-family:'Playfair Display', serif; text-align:center;">Đội ngũ chuyên viên</h2>
-  <div class="team">
-    <div class="card">Chuyên viên 1</div>
-    <div class="card">Chuyên viên 2</div>
-  </div>
-</section>
-<footer>
-  <div>
-    <h3>Liên hệ</h3>
-    <p>Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
-    <p>Điện thoại: 0946 688 679 - 0767 116 767</p>
-    <p><a href="https://www.google.com/maps/place/Th%E1%BA%A9m+m%E1%BB%B9+Ph%C6%B0%C6%A1ng+Mai+Ninh+Thu%E1%BA%ADn/...">Xem trên Google Maps</a></p>
-  </div>
-  <div>
-    <h3>Giờ làm việc</h3>
-    <p>Thứ 2 - Chủ nhật: 8:00 - 20:00</p>
-  </div>
-  <div>
-    <h3>Kết nối</h3>
-    <p><a href="#">Facebook</a></p>
-    <p><a href="#">Instagram</a></p>
-  </div>
-</footer>
+
+  <main>
+    <!-- Mission -->
+    <section id="about">
+      <h2>Sứ mệnh</h2>
+      <div class="mission">Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.</div>
+    </section>
+
+    <!-- Promotions -->
+    <section id="promotions">
+      <h2>Ưu đãi</h2>
+      <div class="promo">
+        <div class="chip">Mua 5 tặng 1</div>
+        <div class="chip">Mua 10 tặng 3</div>
+        <div class="chip" style="background:var(--accent-1);color:var(--accent-3);border:1px solid rgba(31,64,44,0.06)">Ưu đãi mùa này</div>
+      </div>
+    </section>
+
+    <!-- Services (from PDF menu) -->
+    <section id="services">
+      <h2>Dịch vụ tiêu biểu</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Mặt Cơ Bản 12 Bước</h3>
+          <p>Soi da - Tẩy trang - Rửa mặt - Tẩy tế bào chết - Xông hơi - Hút bã nhờn - Sát khuẩn - Lấy mụn - Massage mặt, vai, gáy, đầu - Đắp nạ - Cân bằng da - Thoa chống nắng</p>
+          <div class="price">199.000 đ — 299.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Cấy Spirulina (Cấy Tảo Xoắn)</h3>
+          <p>Cấp nước, phục hồi, sáng da và kháng viêm mạnh — giải pháp cho da yếu, da sau treatment.</p>
+          <div class="price">490.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Mặt Chuyên Sâu 15 Bước</h3>
+          <p>Soi da - Tẩy trang - Rửa mặt - Tẩy tế bào chết - Hút bã nhờn - Massage nâng cơ mặt - Điện di hoạt chất chuyên biệt - Đắp nạ - Chiếu ánh sáng sinh học - Dưỡng phục hồi...</p>
+          <div class="price">Cấy Trắng Nano 790.000 đ / Cấy Trứng Cá Tuyết 990.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>MesoJet Không Kim</h3>
+          <p>Công nghệ phun áp suất cực mịn để dẫn truyền hoạt chất (HA, peptide, EGF...) mà không tổn thương hàng rào da.</p>
+          <div class="price">2.990.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>CO₂ Detox Therapy</h3>
+          <p>Thải độc – tăng oxy – làm hồng da với liệu pháp CO₂ kích thích tuần hoàn máu dưới da.</p>
+          <div class="price">590.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Cấp Nước Đa Tầng</h3>
+          <p>Cấp nước đa tầng kết hợp phục hồi lipid biểu bì, tăng giữ ẩm nội sinh và làm dày hàng rào bảo vệ da.</p>
+          <div class="price">990.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Căng Bóng Diamond Skin</h3>
+          <p>Hiệu ứng "glass skin" chuẩn Hàn, giúp làn da sáng đều – bóng khỏe – căng mướt.</p>
+          <div class="price">1.990.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Peel Căng Bóng / Peel Kiểm Soát Dầu</h3>
+          <p>Peel sinh học tăng hiệu ứng glow hoặc kiểm soát dầu & hỗ trợ da mụn.</p>
+          <div class="price">999.000 đ — 1.490.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Mesotherapy (Các gói)</h3>
+          <p>Mesotherapy Revitalize, Whitening, Skin Booster — dẫn truyền vitamin và peptide giúp tái tạo sâu, sáng da, phục hồi.</p>
+          <div class="price">Từ 2.499.000 đ — 3.499.000 đ (tuỳ gói)</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Liệu pháp Cân Chỉnh Gương Mặt (Không phẫu thuật)</h3>
+          <p>Làm đầy đa vùng, trẻ hóa môi, thon gọn hàm — tinh chỉnh nhẹ nhàng, không phẫu thuật.</p>
+          <div class="price">Liên hệ (LH)</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Body & Massage</h3>
+          <p>Massage săn gọn vòng eo, Massage đá nóng 60', Thư giãn đầu - cổ - vai gáy 30'.</p>
+          <div class="price">Từ 99.000 đ — 299.000 đ</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Thải Độc Da Đông Y & Thải Chì</h3>
+          <p>Liệu trình thải độc với tinh chất thảo dược; thải chì thanh lọc da.</p>
+          <div class="price">269.000 đ / 60.000 đ</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Team (placeholder images) -->
+    <section id="team">
+      <h2>Đội ngũ chuyên viên</h2>
+      <div class="team-grid">
+        <div class="member"><img src="assets/service1.jpg" alt="Chuyên viên"><h4>Chuyên viên A</h4><p>Chuyên viên chăm sóc da</p></div>
+        <div class="member"><img src="assets/service2.jpg" alt="Chuyên viên"><h4>Chuyên viên B</h4><p>Chuyên viên trị liệu</p></div>
+        <div class="member"><img src="assets/service3.jpg" alt="Chuyên viên"><h4>Chuyên viên C</h4><p>Chuyên viên body & massage</p></div>
+      </div>
+    </section>
+
+    <!-- Contact with small google map frame -->
+    <section id="contact">
+      <h2>Liên hệ & Đặt lịch</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Thông tin cơ bản</h3>
+          <p><strong>Địa chỉ:</strong> Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
+          <p><strong>Điện thoại:</strong> <a href="tel:+84946688679">0946 688 679</a> — <a href="tel:+84767116767">0767 116 767</a></p>
+          <p><strong>Giờ làm việc:</strong> Thứ 2 - Chủ nhật: 08:00 - 20:00</p>
+          <p><strong>Slogan:</strong> Nơi vẻ đẹp toả sáng</p>
+        </div>
+        <div class="map-box">
+          <!-- Google Maps embed (small frame) -->
+          <div class="map-wrap" style="height:100%;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,15,0.06)">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3115.874333367309!2d108.9888946152462!3d11.574833014778456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170d16a104785e7%3A0xaeb18afc9b29b785!2zVGjhuqltIG3hu7kgcGjGsMahbmcgbWFp!5e0!3m2!1svi!2s!4v1691580000000" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="fgrid">
+      <div>
+        <strong>Phương Mai Beauty & Spa</strong>
+        <p>Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
+        <p>Hotline: 0946 688 679 • 0767 116 767</p>
+      </div>
+      <div>
+        <strong>Giờ mở cửa</strong>
+        <p>Thứ 2 - Chủ nhật: 08:00 - 20:00</p>
+      </div>
+      <div>
+        <strong>Kết nối</strong>
+        <p><a href="#">Facebook</a> • <a href="#">Instagram</a></p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
