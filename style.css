@@ -1,1 +1,195 @@
+/* =========================
+   Phương Mai Beauty & Spa - Style
+   ========================= */
+
+/* Font & Reset */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #1f402c;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Colors */
+:root {
+    --primary: #a9bfa4;
+    --dark: #244f35;
+    --darker: #1f402c;
+}
+
+/* Header */
+header {
+    background: var(--dark);
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header nav a:hover {
+    color: var(--primary);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 90vh;
+    background: url('assets/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slogan-container {
+    position: absolute;
+    bottom: -60px;
+    background: linear-gradient(90deg, rgba(169,191,164,0.9), rgba(255,255,255,0.9));
+    padding: 20px 40px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    animation: float 4s ease-in-out infinite;
+}
+
+.slogan-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--darker);
+}
+
+/* Float animation for slogan */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Section common */
+section {
+    padding: 80px 20px;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card .content {
+    padding: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--darker);
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--darker);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--dark);
+    color: white;
+}
+
+/* Map */
+.map-container iframe {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Contact Form */
+.contact-form iframe {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: var(--darker);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slogan-container {
+        bottom: -40px;
+        padding: 15px 20px;
+    }
+
+    .slogan-container h1 {
+        font-size: 1.4rem;
+    }
+}
 
