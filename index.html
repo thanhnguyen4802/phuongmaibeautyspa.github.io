@@ -1,73 +1,51 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Phương Mai Beauty & Spa — Nơi vẻ đẹp toả sáng</title>
-  <meta name="description" content="Phương Mai Beauty & Spa - Chăm sóc da, liệu pháp chuyên sâu, mesotherapy, body & massage. Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phương Mai Beauty & Spa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --accent-1: #a9bfa4;
-      --accent-2: #244f35;
-      --accent-3: #1f402c;
-      --bg: #ffffff;
-      --muted: #556b5a;
-      --container: 1200px;
-      --radius: 12px;
+    :root {
+      --color-primary: #a9bfa4;
+      --color-dark: #244f35;
+      --color-darker: #1f402c;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Lato',system-ui,Arial;background:var(--bg);color:var(--accent-3);line-height:1.5}
-    section{padding:50px 20px;border-bottom:1px solid rgba(36,79,53,0.06)}
-
-    header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);padding:14px 24px;z-index:1200;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
-    .nav-wrap{max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),#fff);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:var(--accent-3);font-weight:700}
-    .brand .title{color:var(--accent-3);font-family:'Playfair Display',serif;font-size:18px}
-    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px;align-items:center}
-    nav a{color:var(--accent-3);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
-    nav a:hover{background:rgba(36,79,53,0.08);color:var(--accent-2)}
-
-    .hero{height:72vh;background:url('assets/hero.jpg') center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;position:relative;margin-top:70px}
-    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,79,53,0.18),rgba(31,64,44,0.3));}
-
-    .slogan-wrap{max-width:var(--container);margin:0 auto 40px;display:flex;align-items:center;justify-content:center;position:relative;top:40px}
-    .slogan{background:linear-gradient(90deg,var(--accent-1),rgba(169,191,164,0.85));padding:28px 36px;border-radius:14px;box-shadow:0 14px 40px rgba(20,40,30,0.08);text-align:center;max-width:980px}
-    .slogan h1{font-family:'Playfair Display',serif;margin:0;font-size:32px;color:var(--accent-3)}
-    .slogan p{margin:8px 0 0;color:var(--muted);font-size:15px}
-
-    h2{font-family:'Playfair Display',serif;color:var(--accent-2);font-size:24px;text-align:center;margin-bottom:18px}
-    .mission{background:#f3fbf6;border:1px solid rgba(36,79,53,0.06);padding:22px;border-radius:12px;color:var(--accent-3)}
-
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-    .service-card{background:#fff;border-radius:12px;padding:18px;border:1px solid rgba(36,79,53,0.06);box-shadow:0 12px 30px rgba(15,20,15,0.04);transition:transform .28s ease,box-shadow .28s ease}
-    .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(15,20,15,0.08)}
-    .service-card h3{margin:0 0 8px;font-size:18px;color:var(--accent-3)}
-    .service-card p{margin:0;color:var(--muted);font-size:14px}
-    .price{margin-top:12px;font-weight:700;color:var(--accent-2)}
-
-    .favorite-services{background:var(--accent-1)}
-
-    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
-    .contact-card{background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(36,79,53,0.06)}
-    .map-wrap iframe{width:100%;height:100%;border:0;border-radius:10px}
-    .map-box{height:300px}
-    .booking-form{margin-top:20px}
-    .booking-form input,.booking-form textarea{width:100%;padding:10px;margin-bottom:12px;border:1px solid rgba(36,79,53,0.2);border-radius:8px}
-    .booking-form button{background:var(--accent-2);color:#fff;border:none;padding:12px 20px;border-radius:8px;cursor:pointer}
-    .booking-form button:hover{background:var(--accent-3)}
-
-    footer{margin-top:30px;background:var(--accent-3);color:var(--accent-1);padding:28px}
-    footer .fgrid{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
-    footer a{color:var(--accent-1)}
-
-    @media(max-width:900px){
-      nav ul{display:none}
-      .contact-grid{grid-template-columns:1fr}
-      .map-box{height:260px}
-      .hero{height:50vh}
-      .slogan{padding:18px}
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Lato', sans-serif; line-height: 1.6; color: #333;}
+    header {background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top:0; z-index: 100;}
+    .nav-wrap {max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;}
+    .brand {display: flex; align-items: center;}
+    .logo {background: var(--color-primary); color: #fff; padding: 10px; border-radius: 50%; font-weight: bold;}
+    .title {font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-left: 10px; color: var(--color-dark);}
+    nav ul {list-style: none; display: flex; align-items: center;}
+    nav ul li {margin-left: 20px;}
+    nav ul li a {text-decoration: none; color: var(--color-dark); font-weight: bold; transition: color 0.3s;}
+    nav ul li a:hover {color: var(--color-primary);}
+    /* Hero */
+    .hero {height: 80vh; background: url('assets/hero.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center;}
+    .slogan {background: rgba(255,255,255,0.85); padding: 20px 40px; border-radius: 8px; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--color-darker);}
+    /* Sections */
+    section {padding: 60px 20px; max-width: 1200px; margin: auto;}
+    section h2 {font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--color-dark); margin-bottom: 20px; text-align: center;}
+    .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .card {background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;}
+    .card img {width: 100%; height: 200px; object-fit: cover;}
+    .card-content {padding: 15px;}
+    .card-content h3 {font-size: 1.2rem; margin-bottom: 10px; color: var(--color-darker);}
+    .card-content p {font-size: 0.95rem; color: #555;}
+    /* Map */
+    .map-wrap {height: 300px; border-radius: 8px; overflow: hidden;}
+    /* Footer */
+    footer {background: var(--color-darker); color: #fff; padding: 30px 20px;}
+    .fgrid {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;}
+    .fgrid a {color: var(--color-primary); text-decoration: none; display: flex; align-items: center;}
+    .fgrid svg {margin-right: 8px;}
+    /* Responsive */
+    @media(max-width: 768px) {
+      nav ul {flex-wrap: wrap;}
+      .hero {height: 60vh;}
+      .slogan {font-size: 1.4rem;}
     }
   </style>
 </head>
@@ -85,80 +63,109 @@
         <li><a href="#services">Dịch vụ</a></li>
         <li><a href="#favorite">Yêu thích</a></li>
         <li><a href="#contact">Liên hệ</a></li>
+        <li>
+          <a href="https://www.facebook.com/MyVienPhuongMai" target="_blank" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 320 512" fill="#244f35" xmlns="http://www.w3.org/2000/svg">
+              <path d="M279.14 288l14.22-92.66h-88.91V134.9c0-25.35 12.42-50.06 
+              52.24-50.06H293V6.26S259.5 0 225.36 0C141.09 
+              0 89.09 54.42 89.09 153.12V195.3H0v92.66h89.09V512h107.88V288z"/>
+            </svg>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
-<div class="hero"></div>
-<div class="slogan-wrap">
-  <div class="slogan">
-    <h1>Nơi vẻ đẹp toả sáng</h1>
-    <p>Vẻ đẹp tự nhiên, sự chăm sóc tận tâm — trải nghiệm spa cao cấp tại Phương Mai.</p>
-  </div>
-</div>
+<section class="hero"></section>
+<div class="slogan">Nơi vẻ đẹp toả sáng</div>
 
-<main>
 <section id="about">
   <h2>Sứ mệnh</h2>
-  <div class="mission">
-    Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.
-  </div>
+  <p>Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.</p>
 </section>
 
 <section id="services">
   <h2>Dịch vụ tiêu biểu</h2>
-  <div class="services-grid">
-    <div class="service-card"><h3>Chăm sóc da mặt chuyên sâu</h3><p>Làm sạch, dưỡng ẩm và tái tạo da với công nghệ hiện đại.</p><div class="price">Từ 300.000đ</div></div>
-    <div class="service-card"><h3>Peel da sinh học</h3><p>Tái tạo làn da, cải thiện sắc tố và kết cấu bề mặt.</p><div class="price">Từ 500.000đ</div></div>
-    <div class="service-card"><h3>Mesotherapy</h3><p>Cung cấp dưỡng chất trực tiếp vào da, giúp da căng bóng và khỏe mạnh.</p><div class="price">Từ 1.200.000đ</div></div>
-    <div class="service-card"><h3>Body massage & chăm sóc toàn thân</h3><p>Giúp thư giãn, lưu thông khí huyết, làm mềm mịn da.</p><div class="price">Từ 400.000đ</div></div>
+  <div class="grid">
+    <div class="card">
+      <img src="assets/service1.jpg" alt="Chăm sóc da mặt chuyên sâu">
+      <div class="card-content">
+        <h3>Chăm sóc da mặt chuyên sâu</h3>
+        <p>Từ 300.000đ</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/service2.jpg" alt="Peel da sinh học">
+      <div class="card-content">
+        <h3>Peel da sinh học</h3>
+        <p>Từ 500.000đ</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/service3.jpg" alt="Mesotherapy">
+      <div class="card-content">
+        <h3>Mesotherapy</h3>
+        <p>Từ 1.200.000đ</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/service4.jpg" alt="Body massage">
+      <div class="card-content">
+        <h3>Body massage & chăm sóc toàn thân</h3>
+        <p>Từ 400.000đ</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="favorite" class="favorite-services">
+<section id="favorite">
   <h2>Dịch vụ được yêu thích</h2>
-  <div class="services-grid">
-    <div class="service-card"><h3>Điều trị mụn chuyên sâu</h3><p>Loại bỏ mụn, giảm viêm và ngăn ngừa tái phát.</p><div class="price">Từ 350.000đ</div></div>
-    <div class="service-card"><h3>Nâng cơ trẻ hoá da</h3><p>Sử dụng công nghệ RF & HIFU để nâng cơ và làm săn chắc da.</p><div class="price">Từ 2.000.000đ</div></div>
-    <div class="service-card"><h3>Tắm trắng body</h3><p>Dưỡng trắng, làm mềm da với thảo dược thiên nhiên.</p><div class="price">Từ 600.000đ</div></div>
+  <div class="grid">
+    <div class="card">
+      <img src="assets/favorite1.jpg" alt="Điều trị mụn chuyên sâu">
+      <div class="card-content">
+        <h3>Điều trị mụn chuyên sâu</h3>
+        <p>Từ 350.000đ</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/favorite2.jpg" alt="Nâng cơ trẻ hoá da">
+      <div class="card-content">
+        <h3>Nâng cơ trẻ hoá da</h3>
+        <p>Từ 2.000.000đ</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/favorite3.jpg" alt="Tắm trắng body">
+      <div class="card-content">
+        <h3>Tắm trắng body</h3>
+        <p>Từ 600.000đ</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="contact">
-  <h2>Liên hệ & Đặt lịch</h2>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <p><strong>Địa chỉ:</strong> Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
-      <p><strong>Điện thoại:</strong> <a href="tel:+84946688679">0946 688 679</a> — <a href="tel:+84767116767">0767 116 767</a></p>
-      <p><strong>Giờ làm việc:</strong> Thứ 2 - Chủ nhật: 08:00 - 20:00</p>
-      <div class="booking-form">
-        <h3>Đặt lịch ngay</h3>
-        <form>
-          <input type="text" placeholder="Họ và tên" required>
-          <input type="tel" placeholder="Số điện thoại" required>
-          <textarea placeholder="Nội dung yêu cầu" rows="4"></textarea>
-          <button type="submit">Gửi yêu cầu</button>
-        </form>
-      </div>
-    </div>
-    <div class="map-box">
-      <div class="map-wrap">
-        <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7820.759310427779!2d108.9793674!3d11.574833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170d16a104785e7%3Aaeb18afc9b29b785!2zVGjhuqVtIG3hu7kgUGjGsMahbmcgTWFpIE5pbmggVGh14bqtbg!5e0!3m2!1svi!2s!4v1722931023456!5m2!1svi!2s" 
-  width="100%" 
-  height="100%" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-      </div>
-    </div>
+  <h2>Liên hệ</h2>
+  <p>Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
+  <p>Điện thoại: 0946 688 679 - 0767 116 767</p>
+  <p>Giờ mở cửa: 08:00 - 20:00 (T2 - CN)</p>
+  <div class="map-wrap">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7820.759310427779!2d108.9793674!3d11.574833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170d16a104785e7%3Aaeb18afc9b29b785!2zVGjhuqVtIG3hu7kgUGjGsMahbmcgTWFpIE5pbmggVGh14bqtbg!5e0!3m2!1svi!2s!4v1722931023456!5m2!1svi!2s" 
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
   </div>
+  <h3>Đặt lịch hẹn</h3>
+  <form>
+    <input type="text" placeholder="Họ và tên" required>
+    <input type="tel" placeholder="Số điện thoại" required>
+    <input type="date" required>
+    <textarea placeholder="Ghi chú" rows="4"></textarea>
+    <button type="submit">Gửi</button>
+  </form>
 </section>
-</main>
 
 <footer>
   <div class="fgrid">
@@ -173,7 +180,16 @@
     </div>
     <div>
       <strong>Kết nối</strong>
-      <p><a href="#">Facebook</a> • <a href="#">Instagram</a></p>
+      <p>
+        <a href="https://www.facebook.com/MyVienPhuongMai" target="_blank" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 320 512" fill="#a9bfa4" xmlns="http://www.w3.org/2000/svg">
+            <path d="M279.14 288l14.22-92.66h-88.91V134.9c0-25.35 12.42-50.06 
+            52.24-50.06H293V6.26S259.5 0 225.36 0C141.09 
+            0 89.09 54.42 89.09 153.12V195.3H0v92.66h89.09V512h107.88V288z"/>
+          </svg>
+          Facebook
+        </a>
+      </p>
     </div>
   </div>
 </footer>
