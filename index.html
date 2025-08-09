@@ -3,152 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Phương Mai Beauty & Spa - Nơi vẻ đẹp toả sáng">
     <title>Phương Mai Beauty & Spa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-        }
-        header {
-            background-color: #00796b; /* xanh lục lam */
-            color: white;
-        }
-        header .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
+        body { margin: 0; font-family: 'Open Sans', sans-serif; color: #1f402c; }
+        header { background-color: #244f35; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        header img { height: 50px; }
+        nav a { color: #a9bfa4; text-decoration: none; margin: 0 15px; font-weight: 600; }
+        nav a:hover { color: white; }
         .hero {
-            background: url('assets/hero.jpg') center/cover no-repeat;
+            position: relative;
+            background: url('assets/hero.jpg') no-repeat center center/cover;
             height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
-            background-attachment: fixed;
         }
-        .hero h1 {
-            font-size: 3rem;
+        .slogan {
             font-family: 'Playfair Display', serif;
-            text-shadow: 0px 4px 6px rgba(0,0,0,0.5);
-        }
-        .hero p {
-            font-size: 1.3rem;
-            font-weight: 300;
-        }
-        .service-card {
-            border: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
-        }
-        footer {
-            background-color: #004d40;
+            font-size: 3rem;
             color: white;
-            padding: 2rem 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+            animation: fadeIn 2s ease-in-out;
+            padding: 0 20px;
         }
-        .mission {
-            background-color: #e0f2f1;
-            padding: 3rem 1rem;
-            border-radius: 10px;
-            margin-bottom: 3rem;
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+        section { padding: 50px 20px; max-width: 1200px; margin: auto; }
+        h2 { font-family: 'Playfair Display', serif; color: #244f35; font-size: 2rem; margin-bottom: 20px; text-align: center; }
+        .mission { background-color: #a9bfa4; color: #1f402c; padding: 40px; border-radius: 10px; }
+        footer { background-color: #1f402c; color: #a9bfa4; text-align: center; padding: 20px; }
+        footer a { color: #a9bfa4; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark container">
-            <a class="navbar-brand" href="#">Phương Mai Beauty & Spa</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Dịch vụ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
-                </ul>
-            </div>
+        <img src="assets/logo.png" alt="Phương Mai Beauty & Spa">
+        <nav>
+            <a href="#about">Giới thiệu</a>
+            <a href="#services">Dịch vụ</a>
+            <a href="#contact">Liên hệ</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div>
-            <h1>Nơi vẻ đẹp toả sáng</h1>
-            <p>Vẻ đẹp tự nhiên, sự chăm sóc tận tâm</p>
+    <div class="hero">
+        <div class="slogan">Nơi vẻ đẹp toả sáng</div>
+    </div>
+
+    <section id="about">
+        <h2>Về Chúng Tôi</h2>
+        <div class="mission">
+            <p>Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.</p>
         </div>
     </section>
 
-    <section id="about" class="container py-5">
-        <div class="mission text-center">
-            <h2 class="fw-bold" style="color: #00796b;">Sứ mệnh của chúng tôi</h2>
-            <p class="mt-3">Sứ mệnh của chúng tôi là mang đến trải nghiệm chăm sóc sắc đẹp và thư giãn toàn diện, nơi mỗi khách hàng không chỉ được nâng niu vẻ đẹp bên ngoài mà còn tìm thấy sự cân bằng, tái tạo năng lượng và nuôi dưỡng tinh thần. Với đội ngũ chuyên viên tận tâm, kỹ thuật hiện đại và sản phẩm an toàn, chúng tôi cam kết đồng hành cùng bạn trên hành trình chạm đến vẻ đẹp tự nhiên, khỏe mạnh và bền vững.</p>
-        </div>
+    <section id="contact">
+        <h2>Liên Hệ</h2>
+        <p><strong>Địa chỉ:</strong> Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
+        <p><strong>Điện thoại:</strong> 0946 688 679 - 0767 116 767</p>
+        <p><a href="https://www.google.com/maps/place/Th%E1%BA%A9m+m%E1%BB%B9+Ph%C6%B0%C6%A1ng+Mai+Ninh+Thu%E1%BA%ADn/@11.574833,108.9793674,1727m/data=!3m1!1e3!4m10!1m2!2m1!1zdGjhuqltIG3hu7kgcGjGsMahbmcgbWFpIHBoYW4gcmFuZw!3m6!1s0x3170d16a104785e7:0xaeb18afc9b29b785!8m2!3d11.574833!4d108.9888946!15sCiJ0aOG6qW0gbeG7uSBwaMawxqFuZyBtYWkgcGhhbiByYW5nWiQiInRo4bqpbSBt4bu5IHBoxrDGoW5nIG1haSBwaGFuIHJhbmeSAQxiZWF1dHlfc2Fsb26aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTkdNbVp4U1ZkbkVBRaoBWwoNL2cvMTF5MWw0c3pwNxABMiAQASIcEDqyxjrqkn0fLDBEsKzd8OcnuZKgb2sOEW2SnjImEAIiInRo4bqpbSBt4bu5IHBoxrDGoW5nIG1haSBwaGFuIHJhbmfgAQD6AQQIABA9!16s%2Fg%2F11y1l4szp7!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Xem trên Google Maps</a></p>
     </section>
 
-    <section id="services" class="py-5 container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color: #00796b;">Dịch vụ nổi bật</h2>
-            <p>Chúng tôi mang đến cho bạn những trải nghiệm làm đẹp tốt nhất</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card service-card">
-                    <img src="assets/service1.jpg" class="card-img-top" alt="Dịch vụ 1">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Chăm sóc da mặt</h5>
-                        <p class="card-text">Liệu trình giúp làn da tươi trẻ và rạng rỡ.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card service-card">
-                    <img src="assets/service2.jpg" class="card-img-top" alt="Dịch vụ 2">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Massage thư giãn</h5>
-                        <p class="card-text">Giúp bạn giảm căng thẳng và phục hồi năng lượng.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card service-card">
-                    <img src="assets/service3.jpg" class="card-img-top" alt="Dịch vụ 3">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Điều trị body</h5>
-                        <p class="card-text">Giúp cơ thể săn chắc và khỏe mạnh.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card service-card">
-                    <img src="assets/service4.jpg" class="card-img-top" alt="Dịch vụ 4">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Chăm sóc tóc</h5>
-                        <p class="card-text">Mang lại mái tóc óng mượt và khỏe mạnh.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-5 container text-center">
-        <h2 class="fw-bold" style="color: #00796b;">Liên hệ</h2>
-        <p>Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm</p>
-        <p>Điện thoại: 0946 688 679 - 0767 116 767</p>
-        <p><a href="https://www.google.com/maps/place/Th%E1%BA%A9m+m%E1%BB%B9+Ph%C6%B0%C6%A1ng+Mai+Ninh+Thu%E1%BA%ADn/@11.574833,108.9793674,1727m/data=!3m1!1e3" target="_blank" style="color: #004d40;">Xem bản đồ trên Google Maps</a></p>
-    </section>
-
-    <footer class="text-center">
-        <p>&copy; 2025 Phương Mai Beauty & Spa. All rights reserved.</p>
-        <p>Địa chỉ: Lô 21, KTM Thanh Hà, TP Phan Rang - Tháp Chàm | Điện thoại: 0946 688 679 - 0767 116 767</p>
+    <footer>
+        <p>© 2025 Phương Mai Beauty & Spa</p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
